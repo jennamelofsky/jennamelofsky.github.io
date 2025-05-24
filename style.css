@@ -1,0 +1,13 @@
+/* style.css */
+
+body {
+  background-color: #fef6e4;
+  color: #001858;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  color: #f582ae;
+}
