@@ -1,13 +1,18 @@
 /* style.css */
 
 body {
-  background-color: #fef6e4;
-  color: #001858;
+  background-color: #E5D4FF;
+  color: #6E40B4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 h1 {
   color: #f582ae;
+}
+
+nav a.active {
+  color: #f582ae;
+  font-weight: bold;
 }
