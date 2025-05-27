@@ -5,14 +5,42 @@ body {
   color: #6E40B4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  padding-top: 10px;
+  margin: 0px;
+  padding-top: 0px;
 }
 
-h1 {
-  color: #f582ae;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #E5D4FF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav a.active {
-  color: #f582ae;
+.nav-left a.logo {
   font-weight: bold;
+  font-size: 1.2rem;
+  color: #001858;
+  text-decoration: none;
+}
+
+.nav-left a.logo:hover {
+  color: #f582ae;
+}
+
+.nav-right a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #001858;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-right a.active {
+  color: #f582ae;
+}
+
+.nav-right a:hover {
+  color: #f582ae;
 }
