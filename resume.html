@@ -4,51 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Résumé</title>
+  <title>Résumé | Jenna Melofsky</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <nav>
     <div class="nav-left">
-      <a href="index.html" class="logo">Home</a>
+      <a href="index.html" class="logo active">Home</a>
     </div>
 
     <div class="nav-right">
       <div class="dropdown">
-        <a href="about.html" class="active">About Me ▾</a>
+        <a href="contact.html">Work With Me ▾</a>
         <div class="dropdown-content">
-          <a href="about.html">About Me</a>
           <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="projects.html">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="project1.html">Workflow Tracking System</a>
-        <a href="project2.html">Cosmetic App Case Study</a>
-        <a href="project3.html">Network Vulnerability Identifier</a>
-      </div>
-    </div>
-
-      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
   <main>
-    <section>
-      <h2>Résumé</h2>
-      <p>This page contains my résumé.</p>
-    </section>
+    <section class="resume-section">
+    <div class="resume-header">
+      <h1>My Résumé</h1>
+      <a href="MelofskyJenna_Fall25Resume.pdf" target="_blank" class="download-icon" title="Download Résumé">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="Download icon">
+      </a>
+    </div>
+  
+    <div class="resume-preview">
+      <iframe 
+        src="MelofskyJenna_Fall25Resume.pdf" 
+        width="100%" 
+        height="800px" 
+        style="border:none;">
+      </iframe>
+    </div>
+  </section>
   </main>
 
   <footer>
+    <p class="footer-heading">Let’s stay in touch!</p>
+    <a href="mailto:jennamelofsky@gmail.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="social-icon">
+    </a>
     <a href="https://www.linkedin.com/in/JennaMelofsky" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="social-icon">
-    </a>
-    <a href="https://github.com/jennamelofsky" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="social-icon">
     </a>
   </footer>
 </body>

@@ -4,64 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Contact | Jenna Melofsky</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
- <nav>
+  <nav>
     <div class="nav-left">
-      <a href="index.html" class="logo">Home</a>
+      <a href="index.html" class="logo active">Home</a>
     </div>
 
     <div class="nav-right">
       <div class="dropdown">
-        <a href="about.html">About Me ▾</a>
+        <a href="contact.html">Work With Me ▾</a>
         <div class="dropdown-content">
-          <a href="about.html">About Me</a>
           <a href="resume.html">Résumé</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="projects.html">Projects ▾</a>
-      <div class="dropdown-content">
-        <a href="project1.html">Workflow Tracking System</a>
-        <a href="project2.html">Cosmetic App Case Study</a>
-        <a href="project3.html">Network Vulnerability Identifier</a>
-      </div>
-    </div>
-
-      <a href="contact.html" class="active">Contact</a>
     </div>
   </nav>
 
-  <main>  
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" name="name" id="name" required><br><br>
+  <main>
+    <section class="contact-section">
+      <h1>Send Me a Message 📨</h1>
+      <div class="contact-links">
+        <a href="mailto:jennamelofsky@gmail.com" class="contact-box">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email icon">
+          <p>Email</p>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/JennaMelofsky" target="_blank" class="contact-box">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn icon">
+          <p>LinkedIn</p>
+        </a>
 
-        <label for="email">Email:</label><br>
-        <input type="email" name="_replyto" id="email" required><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea name="message" id="message" rows="5" required></textarea><br><br>
-
-        <button type="submit">Send</button>
-      </form>
+        <a href="https://uthookedin.com/user/817286" target="_blank" class="contact-box">
+          <img src="hookedinlogo.png" alt="HookedIn logo" class="hookedin-logo">
+          <p>HookedIn</p>
+        </a>
+        
+        <a href="https://connect.mccombs.utexas.edu/profile/jennamelofsky/" target="_blank" class="contact-box">
+          <img src="mccombslogo.jpg" alt="McCombs Connect icon">
+          <p>McCombs Connect</p>
+        </a>
+      </div>
     </section>
   </main>
-
-  <footer>
-    <a href="https://www.linkedin.com/in/JennaMelofsky" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="social-icon">
-    </a>
-    <a href="https://github.com/jennamelofsky" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="social-icon">
-    </a>
-  </footer>
 </body>
 
 </html>

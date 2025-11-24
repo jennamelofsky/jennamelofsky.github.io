@@ -34,27 +34,28 @@ nav {
 }
 
 .nav-left a.active {
-  color: #f582ae;
+  color: #001858;
 }
 
 .nav-left a.logo:hover {
-  color: #f582ae;
+  color: #24C1FF;
 }
 
 .nav-right a {
   margin-left: 30px;
   text-decoration: none;
   color: #001858;
+  font-size: 1.1rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav-right a.active {
-  color: #f582ae;
+  color: #24C1FF;
 }
 
 .nav-right a:hover {
-  color: #f582ae;
+  color: #24C1FF;
 }
 
 /* Dropdown container */
@@ -108,8 +109,8 @@ nav {
 
 /* Hover state */
 .dropdown-content a:hover {
-  background-color: #f582ae;
-  color: #FAF7FF;
+  background-color: #E5D4FF;
+  color: #24C1FF;
 }
 
 /* Show dropdown on hover */
@@ -137,8 +138,8 @@ nav {
 
 /* FOOTER */
 footer {
-  margin-top: 60px;
-  padding: 20px;
+  margin-top: 0;              
+  padding: 10px 0 15px 0;
   text-align: center;
 }
 
@@ -158,100 +159,365 @@ footer a:hover {
   vertical-align: middle;
 }
 
+main > section:last-of-type,
+.resume-section:last-of-type,
+.contact-section:last-of-type {
+  margin-bottom: 20px !important; /* reduce space below last section */
+  padding-bottom: 0 !important;
+}
+
 /* INDEX/HOME PAGE */
-.logo-box {
-  background: radial-gradient(circle at center, #f582ae, #e5d4ff);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 1100px;
-  width: 90%;
-  margin: 60px auto;
-  color: #001858;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-  text-align: left;
-}
-
-.project-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-  padding: 0 20px;
-  flex-wrap: wrap;
-}
-
-.project-box {
-  background-color: #fef6e4;
-  border-radius: 16px;
-  padding: 20px;
-  flex: 1 1 250px;
-  text-align: center;
-  text-decoration: none;
-  color: #001858;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-}
-
-.project-box h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.project-box p {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* ABOUT PAGE */
-.about-box {
-  background: linear-gradient(135deg, #e5d4ff, #f582ae);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 1100px;
-  width: 90%;
-  margin: 60px auto;
-  color: #001858;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-  text-align: left;
-}
-
-/* CONTACT PAGE */
-form {
-  max-width: 500px;
-  margin: auto;
+/* HERO / WELCOME SECTION */
+.page-header {
+  position: relative;                /* needed for arrow positioning */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;                     /* full screen height */
+  background: none;
+  color: #001858;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
+/* Animated Welcome text */
+.page-header h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+/* Keyframes for fade-in + upward motion */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 80px;                      /* position near bottom of screen */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #001858;
+  opacity: 0;
+  animation: fadeBounce 1.5s ease-in-out 2s forwards,
+             bounceLoop 2s ease-in-out 3.5s infinite;
+}
+
+/* Arrow fade-in & slight drop */
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Continuous bounce animation */
+@keyframes bounceLoop {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+/* Profile section appears below */
+.profile-pic {
+  text-align: center;
+  padding: 60px 20px 0px;
+}
+
+.profile-pic {
+  display: block;
+  margin: 0 auto;
+  width: 350px;        /* adjust as needed for balance */
+  height: auto;        /* keeps the natural proportions */
+  object-fit: contain; /* shows full image if there's spacing */
+}
+
+/* Responsive scaling for smaller screens */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 3.5rem;
+  }
+
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.intro {
+  background: #E5D4FF;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 60px auto;
+  color: #001858;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+}
+
+.course-schedule {
+  background: #E5D4FF;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 60px auto;
+  color: #001858;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+}
+
+.course-schedule h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #001858;
+}
+
+.course-schedule table {
   width: 100%;
+  border-collapse: collapse;
 }
 
-button {
-  margin-top: 10px;
-  padding: 12px;
-  background-color: #001858;
-  color: #fef6e4;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
+.course-schedule th,
+.course-schedule td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 8px;
+}
+
+.course-schedule th {
+  text-align: left;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.course-schedule td:nth-child(2),
+.course-schedule th:nth-child(2) {
+  text-align: center;
+}
+
+.course-schedule tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #172c66;
+.resources {
+  background: #E5D4FF;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 60px auto;
+  margin-bottom: 40px;
+  color: #001858;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.resources h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #001858;
+}
+
+.resource-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.resource-card {
+  flex: 0 0 300px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+.resource-card iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  border: none;
+}
+
+.resource-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.resource-card p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* RESUME PAGE */
+.resume-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #001858;
+  padding: 0 20px;
+}
+
+/* Header area with text + icon */
+.resume-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* space between title and icon */
+  margin-bottom: 50px; /* matches contact header spacing */
+}
+
+/* Make header match contact page visually */
+.resume-header h1 {
+  font-size: 3rem;
+  font-weight: 700; /* matches the strong Contact page heading */
+  margin: 0;
+  line-height: 1.2; /* balances vertical spacing */
+  color: #001858;
+}
+
+/* Download icon styling */
+.download-icon img {
+  width: 24px;                 /* smaller size */
+  height: 24px;
+  filter: grayscale(100%) brightness(70%); /* makes it grey */
+  opacity: 0.2;                /* softens tone */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
+}
+
+.download-icon:hover img {
+  transform: scale(1.1);
+  
+}
+
+/* PDF preview box */
+.resume-preview {
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* CONTACT PAGE */
+.contact-section {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #001858;
+  margin: 80px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.contact-section h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-between;   /* evenly spread across full width */
+  flex-wrap: nowrap;                /* prevent wrapping on desktop */
+  max-width: 1100px;                /* same width as your nav bar */
+  width: 90%;
+  margin: 0 auto;
+  gap: 20px;                        /* small spacing between boxes */
+}
+
+.contact-box {
+  background: #E5D4FF;
+  border-radius: 20px;
+  flex: 1;                          /* auto-resize evenly */
+  max-width: 250px;                 /* ensures four fit in row */
+  min-width: 200px;
+  aspect-ratio: 1 / 1;              /* keeps it square */
+  text-decoration: none;
+  color: #001858;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-box img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* HookedIn logo final adjustments */
+.contact-links .contact-box img[alt="HookedIn logo"] {
+  width: 150px !important;     
+  height: auto !important;
+  object-fit: contain !important;
+  margin-bottom: 6px !important; /* pulls it down closer to text */
+  transform: translateY(3px);   /* centers it vertically with the others */
+  display: block !important;
+}
+
+/* Responsive layout: wrap when screen is too small */
+@media (max-width: 900px) {
+  .contact-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-box {
+    max-width: 220px;
+    flex: none;
+  }
 }
